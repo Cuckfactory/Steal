@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#160805" />
+<title>STEAL THE CARROT · The Cuck Factory</title>
+<style>
+:root{
+  --ink:#0d0907;--brown:#160a06;--panel:#2a0f0a;--panel2:#3a1710;--line:#8a5732;
+  --cream:#f0dfbd;--muted:#b99d75;--gold:#f0bc45;--gold2:#9f6e22;--green:#62d491;--red:#d55a45;
+  --scene:#121d23;--scene2:#0c1419;--mono:"Courier New",monospace;--serif:Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#0d0806;color:var(--cream)}
+body{font-family:var(--mono);background:
+ radial-gradient(circle at 20% 10%,rgba(99,55,31,.22),transparent 34%),
+ radial-gradient(circle at 88% 72%,rgba(114,67,28,.16),transparent 30%),#0d0806;overflow:auto}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.16;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E")}
+button{font:inherit;color:inherit}
+button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.app{width:min(1500px,100%);height:100dvh;min-height:720px;margin:auto;padding:10px 16px 6px;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:8px;position:relative}
+.app:before{content:"THE\A CUCK FACTORY";white-space:pre;position:absolute;z-index:-1;top:-30px;left:50%;transform:translateX(-50%);font:700 clamp(58px,9vw,145px)/.78 var(--serif);text-align:center;color:#826040;opacity:.12;width:100%;pointer-events:none}
+.header{height:62px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #69401f;padding:0 0 8px}
+.network{font-size:11px;letter-spacing:2px;color:#d2ad6e;margin-bottom:3px}.signal{display:inline-flex;gap:3px;margin-right:9px}.signal i{width:10px;height:5px;background:var(--gold2);display:block}.signal i:last-child{background:var(--gold)}
+.brand{display:flex;align-items:center;gap:11px}.brand-mark{width:26px;height:26px;border:2px solid var(--gold);background:linear-gradient(90deg,var(--gold) 0 45%,transparent 45%);box-shadow:-7px -7px 0 -3px #b77b22}.brand h1{font:700 clamp(28px,3.3vw,48px)/1 var(--serif);margin:0;letter-spacing:-1px;color:#fff3d8}
+.header-actions{display:flex;align-items:center;gap:18px;font-size:11px}.header-actions a,.text-btn{color:#ead9b7;text-decoration:none;border:0;background:none;padding:6px 0;cursor:pointer;border-bottom:1px solid transparent}.header-actions a:hover,.text-btn:hover{border-color:#9d6d39}
+.main-grid{min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:10px}
+.left{min-width:0;min-height:0;display:grid;grid-template-rows:minmax(0,1fr) 124px;gap:8px}
+.frame{border:1px solid #67411f;background:#140906;box-shadow:inset 0 0 40px rgba(0,0,0,.45)}
+.scene-wrap{min-height:0;display:grid;grid-template-rows:34px minmax(0,1fr) 26px}
+.scene-bar,.scene-foot{display:flex;align-items:center;justify-content:space-between;padding:0 12px;background:linear-gradient(90deg,#2b0e09,#3a140c 55%,#23100a);font-size:10px;letter-spacing:.8px;color:#e2c28a}.scene-bar{border-bottom:1px solid #82502a}.scene-foot{border-top:1px solid #82502a;background:#120b08}.scene-state{color:var(--gold);font-weight:bold}.scene-foot b{width:7px;height:7px;display:inline-block;margin-right:7px}.dot-green{background:var(--green)}.dot-gold{background:var(--gold)}
+.scene-meta{display:flex;align-items:center;gap:10px}
+.mini-toggle{border:1px solid #6d4525;background:#1d0e0a;padding:5px 8px;cursor:pointer;font-size:9px;line-height:1}.mini-toggle b{color:#8ee0ad;margin-left:5px}.mini-toggle:disabled{opacity:.38;cursor:not-allowed}
+.scene{position:relative;min-height:0;overflow:hidden;touch-action:none;user-select:none;background:
+ linear-gradient(180deg,rgba(255,255,255,.02),transparent 22%),
+ linear-gradient(90deg,transparent 0 14%,rgba(70,91,101,.22) 14% 14.4%,transparent 14.4% 31%,rgba(70,91,101,.18) 31% 31.4%,transparent 31.4% 50%,rgba(70,91,101,.16) 50% 50.5%,transparent 50.5%),
+ linear-gradient(#17252d,#0c151a)}
+.scene:after{content:"";position:absolute;left:0;right:0;bottom:0;height:40%;background:
+ repeating-linear-gradient(0deg,transparent 0 43px,rgba(99,122,132,.13) 44px 45px),
+ repeating-linear-gradient(105deg,transparent 0 92px,rgba(101,125,135,.14) 93px 94px),#111a1f;clip-path:polygon(0 22%,100% 0,100% 100%,0 100%)}
+.factory-scroll{position:absolute;inset:0;width:240%;transition:transform .08s linear;z-index:1}
+.beam{position:absolute;height:7px;background:#b39558;opacity:.84;box-shadow:0 1px 0 #493619}.b1{left:8%;top:14%;width:27%}.b2{left:40%;top:20%;width:18%}.b3{left:67%;top:11%;width:25%}.b4{left:84%;top:31%;width:18%}
+.pipe{position:absolute;top:0;bottom:36%;width:4px;background:#5a7280;opacity:.78}.p1{left:7%}.p2{left:22%}.p3{left:38%}.p4{left:58%}.p5{left:73%}.p6{left:89%}
+.machine{position:absolute;bottom:31%;width:66px;height:40px;border:3px solid #4b5e57;background:#131b1d;box-shadow:inset 0 0 0 3px #101417}.machine:before{content:"";position:absolute;left:8px;right:8px;top:8px;height:8px;background:#315347;box-shadow:0 13px 0 #542c29}.m1{left:14%}.m2{left:36%}.m3{left:61%}.m4{left:79%}.m5{left:96%}
+.sign{position:absolute;left:4%;top:9%;padding:6px 11px;border:1px solid #c26b45;background:#773526;color:#eac19d;font-size:9px;letter-spacing:.5px;z-index:3}
+.worker-bg{position:absolute;bottom:33%;width:12px;height:23px;background:#6b4634;box-shadow:0 -7px 0 -2px #a66f50,5px 5px 0 -3px #2b3235;z-index:2}.wb1{left:28%}.wb2{left:47%}.wb3{left:74%}.wb4{left:91%}
+.track{position:absolute;left:4%;right:4%;bottom:20%;height:4px;background:#91582f;border-top:2px solid #c08543;z-index:6;box-shadow:0 10px 18px rgba(0,0,0,.6)}
+.track:after{content:"";position:absolute;left:0;right:0;top:27px;height:2px;background:repeating-linear-gradient(90deg,#4b5660 0 65px,transparent 65px 110px);opacity:.45}
+.proximity-hud{position:absolute;z-index:12;left:16px;top:16px;width:230px;background:rgba(14,9,7,.9);border:1px solid #6d4525;padding:10px 12px;box-shadow:5px 5px 0 rgba(0,0,0,.18)}
+.proximity-hud small{display:block;color:#c8a778;font-size:9px;letter-spacing:1.2px}.prox-num{font:bold 32px/1 var(--serif);color:var(--gold);margin:4px 0}.prox-bar{height:6px;background:#402117;overflow:hidden}.prox-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#b44d3c,#e2a33c,#f4d36b);transition:width .07s linear}
+.watch-indicator{position:absolute;z-index:12;right:16px;top:16px;min-width:185px;padding:8px 10px;border:1px solid #5b4733;background:rgba(11,10,8,.86);text-align:right;font-size:9px;letter-spacing:1px;color:#bba37e}.watch-indicator b{display:block;margin-top:4px;font-size:13px;color:var(--green)}.watch-indicator.warning b{color:var(--gold)}.watch-indicator.danger{border-color:#8f3e32}.watch-indicator.danger b{color:#ef6d59}
+.actor{position:absolute;z-index:8;bottom:calc(20% + 4px);transform:translateX(-50%);will-change:left}.employee{left:13%}.ansem{left:70%}.ghost{left:13%;opacity:.26;filter:saturate(.45) brightness(1.15);display:none;z-index:7}.ghost.active{display:block}
+.actor-label{position:absolute;bottom:112px;left:50%;transform:translateX(-50%);font-size:8px;letter-spacing:.9px;white-space:nowrap;color:#dab47a;text-shadow:2px 2px #000}
+.pixel-person{position:relative;width:56px;height:84px;image-rendering:pixelated}.pixel-person *{position:absolute;image-rendering:pixelated}
+.employee .pixel-person,.ghost .pixel-person{transform:scale(1.28);transform-origin:bottom center}
+.employee .head,.ghost .head{left:18px;top:6px;width:25px;height:25px;background:#ba7b50;border:4px solid #3c2820;box-shadow:0 4px 0 #7b4e35}.employee .head:before,.ghost .head:before{content:"";left:4px;top:-7px;width:17px;height:7px;background:#4e3127;position:absolute}.employee .eye,.ghost .eye{top:8px;width:4px;height:4px;background:#191514}.employee .e1,.ghost .e1{left:4px}.employee .e2,.ghost .e2{right:4px}.employee .jaw,.ghost .jaw{left:4px;right:4px;bottom:3px;height:3px;background:#5b3327;border-top:1px solid #deb086}
+.employee .body,.ghost .body{left:14px;top:34px;width:32px;height:31px;background:#762f2a;border:4px solid #4a251f;box-shadow:inset 0 0 0 4px #9c4a38}.employee .badge,.ghost .badge{left:10px;top:8px;width:9px;height:9px;border:1px solid #d3a24a;color:#d3a24a;font:7px/8px var(--mono);text-align:center}
+.employee .arm,.ghost .arm{width:7px;height:28px;top:35px;background:#a86d48;border:3px solid #503126;transform-origin:top center}.employee .al,.ghost .al{left:8px;transform:rotate(22deg)}.employee .ar,.ghost .ar{right:5px;transform:rotate(-16deg)}.employee .leg,.ghost .leg{width:8px;height:24px;top:62px;background:#3a2c34;border:2px solid #1e1b20}.employee .ll,.ghost .ll{left:18px}.employee .lr,.ghost .lr{left:33px}
+.employee.moving .arm.al,.ghost.moving .arm.al{animation:armL .32s steps(2) infinite}.employee.moving .arm.ar,.ghost.moving .arm.ar{animation:armR .32s steps(2) infinite}.employee.moving .leg.ll,.ghost.moving .leg.ll{animation:legL .32s steps(2) infinite}.employee.moving .leg.lr,.ghost.moving .leg.lr{animation:legR .32s steps(2) infinite}@keyframes armL{50%{transform:rotate(-20deg)}}@keyframes armR{50%{transform:rotate(25deg)}}@keyframes legL{50%{transform:translateX(7px)}}@keyframes legR{50%{transform:translateX(-7px)}}
+.ansem .pixel-person{width:75px;height:108px;transform-origin:center bottom;transition:transform .15s steps(2);transform:scaleX(-1) scale(1.18)}.ansem.away .pixel-person{transform:scaleX(-1) scale(1.18)}.ansem.turning .pixel-person{transform:scaleX(-.16) scale(1.18)}.ansem.watching .pixel-person{transform:scaleX(1) scale(1.18)}
+.ansem .hat-brim{left:14px;top:10px;width:50px;height:8px;background:#4c2030;border:3px solid #24131a}.ansem .hat-top{left:24px;top:-10px;width:31px;height:24px;background:#5e293b;border:3px solid #2b1720}.ansem .head{left:25px;top:20px;width:29px;height:31px;background:#bd7e55;border:4px solid #4a2f24;box-shadow:0 4px 0 #80543b}.ansem .face{inset:0}.ansem.away .face{opacity:0}.ansem .eye{top:7px;width:4px;height:4px;background:#17120f}.ansem .e1{left:5px}.ansem .e2{right:5px}.ansem .grin{left:5px;right:5px;bottom:5px;height:8px;background:#f3ddbb;border:2px solid #8f6443}.ansem .coat{left:17px;top:51px;width:43px;height:39px;background:#673047;border:4px solid #351c29;box-shadow:inset 0 0 0 5px #87415b}.ansem .vest{left:12px;top:4px;width:13px;height:27px;background:#c09358;border:2px solid #6a4829}.ansem .arm{top:54px;width:8px;height:35px;background:#8a3d54;border:3px solid #3d2030}.ansem .al{left:9px;transform:rotate(14deg)}.ansem .ar{right:7px;transform:rotate(-12deg)}.ansem .leg{top:88px;width:9px;height:20px;background:#8e4565;border:2px solid #3a2432}.ansem .ll{left:23px}.ansem .lr{left:43px}.ansem .cane{right:-7px;top:70px;width:4px;height:38px;background:#c9a450;transform:rotate(-8deg);transform-origin:top}.ansem .cane:before{content:"";position:absolute;left:-1px;top:-5px;width:8px;height:8px;border:2px solid #d0ad55;border-radius:50%}
+.ansem.moving .leg.ll{animation:aStep1 .4s steps(2) infinite}.ansem.moving .leg.lr{animation:aStep2 .4s steps(2) infinite}@keyframes aStep1{50%{transform:translateX(5px)}}@keyframes aStep2{50%{transform:translateX(-5px)}}
+.carrot-prop{position:absolute;z-index:9;bottom:calc(20% + 64px);width:24px;height:56px;background:linear-gradient(180deg,#f3a13e 0%,#ee8b31 42%,#d06a1d 100%);clip-path:polygon(9% 0,91% 0,64% 100%,40% 100%);filter:drop-shadow(0 0 12px rgba(241,189,65,.9));will-change:left;transform:translateX(-50%);animation:carrotBob 1.4s steps(2) infinite}.carrot-prop:before,.carrot-prop:after{content:"";position:absolute;top:-15px;width:8px;height:22px;background:#6ec479}.carrot-prop:before{left:5px;transform:rotate(-22deg)}.carrot-prop:after{right:4px;transform:rotate(23deg)}@keyframes carrotBob{50%{transform:translateX(-50%) translateY(-2px)}}
+.instruction{position:absolute;z-index:15;left:50%;bottom:8%;transform:translateX(-50%);width:min(760px,92%);text-align:center;pointer-events:none;text-shadow:0 3px 8px #000}.instruction strong{display:block;font:900 clamp(34px,4vw,58px)/.93 Impact,"Arial Narrow",sans-serif;letter-spacing:.5px;color:#fff0cf}.instruction span{display:block;margin-top:7px;font-size:11px;letter-spacing:1.1px;color:#d8b77e}.instruction.active strong{color:var(--gold)}.instruction.danger strong{color:#f07a65}
+.countdown{position:absolute;z-index:18;inset:0;display:grid;place-items:center;font:900 clamp(70px,11vw,150px)/1 Impact,sans-serif;color:#f3c657;text-shadow:5px 6px #2a120b;pointer-events:none}
+.flash{position:absolute;inset:0;background:rgba(219,74,52,.13);z-index:14;opacity:0;pointer-events:none}.flash.on{animation:flash .22s steps(2)}@keyframes flash{50%{opacity:1}}
+.control{padding:10px 14px;display:grid;grid-template-columns:1fr;align-items:center;background:linear-gradient(110deg,#35140d,#24100b 68%,#180b08);border:1px solid #6b3e22;min-height:0}
+.start-view,.result{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:14px;align-items:center}
+.control-copy small{color:#c6a36f;letter-spacing:1.8px;font-size:9px}.control-copy h2{font:900 clamp(20px,2.5vw,34px)/1 Impact,"Arial Narrow",sans-serif;margin:5px 0 7px;color:#fff0d0}.control-copy p{font-size:10px;color:#c5a983;margin:0;line-height:1.45}
+.action-zone{height:100%;display:grid;place-items:center}.hold-btn{width:100%;height:74px;border:1px solid #b16c36;background:linear-gradient(#6c2a1d,#3c1710);box-shadow:inset 0 0 0 2px #2a110d,0 5px 0 #130805;cursor:pointer;touch-action:none}.hold-btn strong{display:block;font:900 30px/1 Impact,"Arial Narrow",sans-serif;color:#ffe5ae}.hold-btn span{display:block;margin-top:7px;font-size:9px;letter-spacing:1px;color:#e5bb79}.hold-btn:active,.hold-btn.held{transform:translateY(3px);box-shadow:inset 0 0 0 2px #2a110d,0 2px 0 #130805;background:linear-gradient(#7d3421,#45190f)}
+.result{display:none}.result.active{display:grid}.result-main small{font-size:9px;color:#69d191;letter-spacing:1px}.result-main h2{margin:3px 0 0;font:900 clamp(24px,2.3vw,34px)/1 Impact,sans-serif}.result-stats{display:flex;gap:28px;align-items:end}.result-stat span{display:block;font-size:8px;color:#bd9e73;letter-spacing:1px}.result-stat b{font:700 30px/1 var(--serif);color:var(--gold)}.result-actions{display:flex;gap:8px}.small-btn{border:1px solid #8d5930;background:#30140e;padding:10px 15px;cursor:pointer}.small-btn.primary{background:#6c2a1d;border-color:#bd743b}.small-btn strong{font:900 16px/1 Impact,sans-serif}
+.sidebar{min-height:0;display:grid;grid-template-rows:1.05fr .95fr .52fr;gap:8px}.card{border:1px solid #704424;background:linear-gradient(145deg,#35120c,#200c08);padding:13px 14px;min-height:0;overflow:hidden}.kicker{font-size:9px;letter-spacing:1.4px;color:#c5a36d}.card h3{font:900 22px/1 Impact,"Arial Narrow",sans-serif;margin:7px 0 10px;color:#ffe8c2}.card p{font-size:10px;line-height:1.5;color:#c3a681;margin:0 0 10px}.record-big{border-top:1px solid #65401f;padding-top:11px;margin-top:10px;display:flex;justify-content:space-between;align-items:end}.record-big span{font-size:8px;color:#b89466}.record-big b{font:700 33px/1 var(--serif);color:var(--gold)}.record-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;border-top:1px solid #65401f;margin-top:11px;padding-top:11px}.metric span{display:block;font-size:7px;color:#a98e69}.metric b{display:block;margin-top:3px;font-size:13px;color:#edca8b}.leader-row{height:31px;display:grid;grid-template-columns:28px 1fr 56px;gap:7px;align-items:center;border-top:1px solid rgba(144,91,49,.42);font-size:9px}.leader-row:first-of-type{border-top:0}.leader-row i{font-style:normal;color:#9d815d}.leader-row b{font-weight:normal;color:#e4c89b;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.leader-row strong{text-align:right;color:#efbd56;font-size:10px}.log{font-size:9px;line-height:1.55;color:#5fce8d}.log span{color:#ad936f}.footer{height:14px;display:flex;align-items:center;justify-content:space-between;color:#8d744f;font-size:8px;letter-spacing:1px}
+@media(max-width:980px){.app{padding:8px;height:auto;min-height:100dvh;display:block}.header{height:auto;min-height:62px}.main-grid{display:block}.left{display:block}.scene-wrap{height:58dvh;min-height:410px}.control{margin-top:8px}.start-view,.result.active{grid-template-columns:1fr;gap:10px}.action-zone{height:auto}.hold-btn{height:72px}.sidebar{display:grid;grid-template-columns:1fr 1fr;margin-top:8px}.sidebar .card:last-child{display:none}.footer{margin-top:8px}.header-actions{display:none}}
+@media(max-width:650px){.brand h1{font-size:27px}.network{font-size:8px}.brand-mark{width:20px;height:20px}.scene-wrap{height:54dvh;min-height:395px}.scene-bar,.scene-foot{font-size:7px;padding:0 8px}.scene-foot span:nth-child(2){display:none}.proximity-hud{left:8px;top:8px;width:150px;padding:6px}.prox-num{font-size:22px}.watch-indicator{right:8px;top:8px;min-width:126px;padding:6px;font-size:7px}.watch-indicator b{font-size:10px}.mini-toggle{padding:4px 6px;font-size:7px}.sign{display:none}.instruction{bottom:7%;width:94%}.instruction strong{font-size:31px}.instruction span{font-size:8px}.employee .pixel-person,.ghost .pixel-person{transform:scale(1.05);transform-origin:bottom center}.ansem.away .pixel-person{transform:scaleX(-1) scale(.98)}.ansem.turning .pixel-person{transform:scaleX(-.16) scale(.98)}.ansem.watching .pixel-person{transform:scaleX(1) scale(.98)}.control{padding:10px}.control-copy h2{font-size:23px}.control-copy p{font-size:9px}.sidebar{display:block}.card{margin-top:8px}.hold-btn{height:76px}.result-stats{gap:14px}.result-stat b{font-size:22px}.footer{font-size:6px}.carrot-prop{bottom:calc(20% + 53px);width:19px;height:45px}}
+@media(max-height:790px) and (min-width:981px){.app{padding-top:7px}.header{height:56px}.left{grid-template-rows:minmax(0,1fr) 114px}.control{padding:8px 12px}.hold-btn{height:66px}.sidebar{grid-template-rows:1fr .9fr .46fr}.card{padding:11px 12px}.card h3{font-size:20px;margin:5px 0 7px}.card p{font-size:9px}.record-big b{font-size:29px}.result-main h2{font-size:28px}.result-stat b{font-size:26px}.footer{height:12px}}
+</style>
+</head>
+<body>
+<main class="app">
+  <header class="header">
+    <div>
+      <div class="network"><span class="signal"><i></i><i></i><i></i></span>CUCK FACTORY NETWORK · LIVE</div>
+      <div class="brand"><div class="brand-mark"></div><h1>STEAL THE CARROT</h1></div>
+    </div>
+    <div class="header-actions"><a href="#">Back to factory</a><button class="text-btn" id="pauseBtn">Pause animation</button></div>
+  </header>
+
+  <div class="main-grid">
+    <section class="left">
+      <div class="scene-wrap frame">
+        <div class="scene-bar"><span>CUCK FACTORY, PROXIMITY FLOOR</span><div class="scene-meta"><button class="mini-toggle" id="ghostToggle" disabled><span>GHOST</span><b id="ghostState">OFF</b></button><span class="scene-state" id="sceneState">AWAITING EMPLOYEE</span></div></div>
+        <div class="scene" id="scene">
+          <div class="proximity-hud"><small>CARROT PROXIMITY</small><div class="prox-num" id="proxNum">0.0%</div><div class="prox-bar"><i id="proxFill"></i></div></div>
+          <div class="watch-indicator" id="watchIndicator"><span>SUPERVISOR STATE</span><b id="watchText">NOT ACTIVE</b></div>
+
+          <div class="factory-scroll" id="factoryScroll">
+            <div class="beam b1"></div><div class="beam b2"></div><div class="beam b3"></div><div class="beam b4"></div>
+            <div class="pipe p1"></div><div class="pipe p2"></div><div class="pipe p3"></div><div class="pipe p4"></div><div class="pipe p5"></div><div class="pipe p6"></div>
+            <div class="machine m1"></div><div class="machine m2"></div><div class="machine m3"></div><div class="machine m4"></div><div class="machine m5"></div>
+            <div class="worker-bg wb1"></div><div class="worker-bg wb2"></div><div class="worker-bg wb3"></div><div class="worker-bg wb4"></div>
+            <div class="sign">CUCK FACTORY // PROXIMITY FLOOR</div>
+          </div>
+
+          <div class="track"></div>
+
+          <div class="actor ghost" id="ghostActor">
+            <span class="actor-label">YOUR BEST GHOST</span>
+            <div class="pixel-person">
+              <div class="head"><span class="eye e1"></span><span class="eye e2"></span><span class="jaw"></span></div><div class="body"><span class="badge">C</span></div><div class="arm al"></div><div class="arm ar"></div><div class="leg ll"></div><div class="leg lr"></div>
+            </div>
+          </div>
+
+          <div class="actor employee" id="employeeActor">
+            <span class="actor-label">YOU · EMPLOYEE #00421</span>
+            <div class="pixel-person">
+              <div class="head"><span class="eye e1"></span><span class="eye e2"></span><span class="jaw"></span></div><div class="body"><span class="badge">C</span></div><div class="arm al"></div><div class="arm ar"></div><div class="leg ll"></div><div class="leg lr"></div>
+            </div>
+          </div>
+
+          <div class="actor ansem away" id="ansemActor">
+            <span class="actor-label">ANSEM · SUPERVISOR</span>
+            <div class="pixel-person">
+              <div class="hat-brim"></div><div class="hat-top"></div>
+              <div class="head"><div class="face"><span class="eye e1"></span><span class="eye e2"></span><span class="grin"></span></div></div>
+              <div class="coat"><span class="vest"></span></div><div class="arm al"></div><div class="arm ar"></div><div class="leg ll"></div><div class="leg lr"></div><div class="cane"></div>
+            </div>
+          </div>
+          <div class="carrot-prop" id="carrot"></div>
+
+          <div class="instruction" id="instruction"><strong>PRESS SPACE TO START</strong><span>ON MOBILE · HOLD THE BUTTON OR THE FACTORY FLOOR</span></div>
+          <div class="countdown" id="countdown"></div><div class="flash" id="flash"></div>
+        </div>
+        <div class="scene-foot"><span><b class="dot-green"></b>Employee ready</span><span><b class="dot-gold"></b>Ansem is supervising</span><span>proximity affects Cuckdrop allocation</span></div>
+      </div>
+
+      <div class="control frame" id="controlPanel">
+        <div class="start-view" id="startView">
+          <div class="control-copy" id="controlCopy"><small>YOUR SHIFT STARTS HERE</small><h2>GET AS CLOSE AS POSSIBLE.</h2><p>Move only while Ansem is facing away. Release immediately when he turns.</p></div>
+          <div class="action-zone" id="actionZone"><button class="hold-btn" id="holdBtn"><strong>HOLD SPACE TO MOVE</strong><span>RELEASE WHEN ANSEM LOOKS</span></button></div>
+        </div>
+        <div class="result" id="resultPanel">
+          <div class="result-main"><small>SHIFT COMPLETE</small><h2 id="resultTitle">MOVEMENT DETECTED</h2></div>
+          <div>
+            <div class="result-stats"><div class="result-stat"><span>PROXIMITY</span><b id="resultProx">0.0%</b></div><div class="result-stat"><span>ALLOCATION MODIFIER</span><b id="resultBoost">+0%</b></div></div>
+            <div class="result-actions" style="margin-top:10px"><button class="small-btn primary" id="againBtn"><strong>RUN AGAIN</strong></button><button class="small-btn" id="keepBtn"><strong>KEEP SCORE</strong></button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <section class="card record-card"><span class="kicker">YOUR SHIFT RECORD</span><h3>PROXIMITY RECORD</h3><p>Your highest recorded proximity on this device.</p><div class="record-big"><span>YOUR BEST</span><b id="bestProx">—</b></div><div class="record-grid"><div class="metric"><span>SHIFTS</span><b id="shiftCount">0</b></div><div class="metric"><span>ALLOCATION MODIFIER</span><b id="bestBoost">—</b></div></div></section>
+      <section class="card leader-card"><span class="kicker">FACTORY LEADERBOARD</span><h3>CLOSEST EMPLOYEES</h3><div id="leaderboard"></div></section>
+      <section class="card"><span class="kicker">SUPERVISOR LOG</span><p class="log">ANSEM // ACTIVE<br><span>proximity monitoring enabled</span><br><span>allocation review continuous</span></p></section>
+    </aside>
+  </div>
+  <footer class="footer"><span>THE CUCK FACTORY · PROXIMITY SHIFT</span><span>BUILT FOR THE TIMELINE</span></footer>
+</main>
+<script>
+(()=>{
+const $=s=>document.querySelector(s);
+const scene=$('#scene'),employee=$('#employeeActor'),ansem=$('#ansemActor'),carrot=$('#carrot'),ghost=$('#ghostActor'),scroll=$('#factoryScroll');
+const instruction=$('#instruction'),countdown=$('#countdown'),sceneState=$('#sceneState'),watchIndicator=$('#watchIndicator'),watchText=$('#watchText');
+const proxNum=$('#proxNum'),proxFill=$('#proxFill'),holdBtn=$('#holdBtn'),startView=$('#startView'),resultPanel=$('#resultPanel');
+const resultProx=$('#resultProx'),resultBoost=$('#resultBoost'),resultTitle=$('#resultTitle'),againBtn=$('#againBtn'),keepBtn=$('#keepBtn');
+const bestProxEl=$('#bestProx'),bestBoostEl=$('#bestBoost'),shiftCountEl=$('#shiftCount'),ghostToggle=$('#ghostToggle'),ghostState=$('#ghostState'),leaderboard=$('#leaderboard'),flash=$('#flash');
+let state='idle',held=false,progress=0,startAt=0,last=0,shiftCount=+(localStorage.getItem('carrot_shifts')||0),bestData=null,ghostOn=false,ghostProgress=0,ghostHeld=false,ghostEventIndex=0,runEvents=[],runSeed=0,watchMode='inactive',watchUntil=0,awayUntil=0,turnUntil=0,watchStart=0,paused=false,raf=0;
+try{bestData=JSON.parse(localStorage.getItem('carrot_best')||'null')}catch(e){}
+const samples=[['ASPARAGOID',99.42],['CUCKLORD',98.93],['GOLDENHAND',98.51],['SHIFT_0841',97.88],['BAGHOLDER',96.77],['WORKER_221',95.64]];
+function seeded(seed){let a=seed>>>0;return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+let rand=Math.random;
+function boost(p){if(p<50)return 0;if(p<70)return 2;if(p<85)return 5;if(p<95)return 10;if(p<99)return 15;return 20}
+function renderRecords(){shiftCountEl.textContent=shiftCount;if(bestData){bestProxEl.textContent=bestData.proximity.toFixed(2)+'%';bestBoostEl.textContent='+'+boost(bestData.proximity)+'%';ghostToggle.disabled=false}else{bestProxEl.textContent='—';bestBoostEl.textContent='—';ghostToggle.disabled=true;ghostOn=false;ghostState.textContent='OFF'}renderLeaderboard()}
+function renderLeaderboard(){let rows=samples.slice();if(bestData)rows.push(['YOU',bestData.proximity]);rows.sort((a,b)=>b[1]-a[1]);leaderboard.innerHTML=rows.slice(0,7).map((r,i)=>`<div class="leader-row"><i>#${String(i+1).padStart(2,'0')}</i><b>${r[0]}</b><strong>${r[1].toFixed(2)}%</strong></div>`).join('')}
+function setPositions(p,gp=0){
+  const playerX=13+58*p;
+  const ansemX=68+29*p;
+  employee.style.left=playerX+'%';
+  ansem.style.left=ansemX+'%';
+  carrot.style.left=Math.min(96,ansemX+5.8)+'%';
+  if(ghostOn){ghost.style.left=(13+58*gp)+'%'}
+  scroll.style.transform=`translateX(${-p*26}%)`;
+  proxNum.textContent=(p*100).toFixed(p>.9?2:1)+'%';
+  proxFill.style.width=(p*100)+'%';
+}
+function setWatch(mode){watchMode=mode;ansem.classList.remove('away','turning','watching');watchIndicator.classList.remove('warning','danger');if(mode==='away'){ansem.classList.add('away');watchText.textContent='LOOKING AWAY';watchText.style.color='';sceneState.textContent='MOVE';}
+else if(mode==='turning'){ansem.classList.add('turning');watchIndicator.classList.add('warning');watchText.textContent='TURNING';sceneState.textContent='CAUTION';}
+else if(mode==='watching'){ansem.classList.add('watching');watchIndicator.classList.add('danger');watchText.textContent='WATCHING';sceneState.textContent='HOLD POSITION';}
+else{ansem.classList.add('away');watchText.textContent='NOT ACTIVE';sceneState.textContent='AWAITING EMPLOYEE';}}
+function scheduleAway(now){setWatch('away');const difficulty=.92+progress*1.25;awayUntil=now+(1400+rand()*1700)/difficulty}
+function scheduleTurn(now){setWatch('turning');turnUntil=now+220}
+function scheduleWatch(now){setWatch('watching');watchStart=now;watchUntil=now+560+rand()*420}
+function resetUI(){state='idle';held=false;progress=0;ghostProgress=0;ghostHeld=false;ghostEventIndex=0;runEvents=[];setPositions(0,0);employee.classList.remove('moving');ghost.classList.remove('moving');ansem.classList.remove('moving');setWatch('inactive');instruction.className='instruction';instruction.innerHTML='<strong>PRESS SPACE TO START</strong><span>ON MOBILE · HOLD THE BUTTON OR THE FACTORY FLOOR</span>';startView.style.display='grid';resultPanel.classList.remove('active');holdBtn.classList.remove('held');if(ghostOn&&bestData){ghost.classList.add('active')}else ghost.classList.remove('active');}
+async function begin(){if(state!=='idle'&&state!=='ended')return;state='countdown';held=false;startView.style.display='grid';resultPanel.classList.remove('active');instruction.innerHTML='<strong>GET READY</strong><span>MOVE ONLY WHILE ANSEM IS FACING AWAY</span>';sceneState.textContent='SHIFT STARTING';const seq=['3','2','1','MOVE'];for(const x of seq){countdown.textContent=x;await new Promise(r=>setTimeout(r,x==='MOVE'?430:560))}countdown.textContent='';startRun()}
+function startRun(){state='active';progress=0;ghostProgress=0;runEvents=[];ghostEventIndex=0;ghostHeld=false;runSeed=(ghostOn&&bestData)?bestData.seed:Math.floor(Math.random()*2147483647);rand=seeded(runSeed);startAt=performance.now();last=startAt;scheduleAway(startAt);instruction.className='instruction active';instruction.innerHTML='<strong>HOLD SPACE TO MOVE</strong><span>RELEASE WHEN ANSEM LOOKS</span>';if(ghostOn&&bestData){ghost.classList.add('active')}setPositions(0,0);raf=requestAnimationFrame(loop)}
+function recordHeld(v){if(state!=='active')return;const t=performance.now()-startAt;const prev=runEvents.length?runEvents[runEvents.length-1].held:false;if(prev!==v)runEvents.push({t,held:v})}
+function setHeld(v){if(paused)return;if(state==='idle'&&v){begin();return}if(state!=='active')return;if(held===v)return;held=v;recordHeld(v);holdBtn.classList.toggle('held',v);employee.classList.toggle('moving',v&&watchMode!=='watching')}
+function updateGhost(elapsed,dt){if(!ghostOn||!bestData)return;while(ghostEventIndex<bestData.events.length&&bestData.events[ghostEventIndex].t<=elapsed){ghostHeld=bestData.events[ghostEventIndex].held;ghostEventIndex++}ghost.classList.toggle('moving',ghostHeld);if(ghostHeld){ghostProgress+=0.205*(1-ghostProgress)*dt;ghostProgress=Math.min(.9994,ghostProgress)}}
+function loop(now){if(state!=='active')return;if(paused){last=now;raf=requestAnimationFrame(loop);return}const dt=Math.min(.05,(now-last)/1000);last=now;const elapsed=now-startAt;
+if(watchMode==='away'&&now>=awayUntil)scheduleTurn(now);else if(watchMode==='turning'&&now>=turnUntil)scheduleWatch(now);else if(watchMode==='watching'&&now>=watchUntil)scheduleAway(now);
+if(held&&watchMode==='watching'&&now-watchStart>120){endRun('MOVEMENT DETECTED');return}
+if(held&&watchMode==='away'){progress+=0.205*(1-progress)*dt;progress=Math.min(.9994,progress);ansem.classList.add('moving')}else ansem.classList.remove('moving');
+updateGhost(elapsed,dt);setPositions(progress,ghostProgress);raf=requestAnimationFrame(loop)}
+function endRun(reason){state='ended';held=false;cancelAnimationFrame(raf);employee.classList.remove('moving');ansem.classList.remove('moving');holdBtn.classList.remove('held');setWatch('inactive');flash.classList.remove('on');void flash.offsetWidth;flash.classList.add('on');const p=progress*100;shiftCount++;localStorage.setItem('carrot_shifts',shiftCount);let isBest=!bestData||p>bestData.proximity;if(isBest){bestData={proximity:p,seed:runSeed,events:runEvents.slice()};localStorage.setItem('carrot_best',JSON.stringify(bestData))}renderRecords();instruction.className='instruction';instruction.innerHTML=`<strong>${reason}</strong><span>SHIFT RECORD FILED</span>`;resultTitle.textContent=isBest?'NEW PROXIMITY RECORD':reason;resultProx.textContent=p.toFixed(2)+'%';resultBoost.textContent='+'+boost(p)+'%';startView.style.display='none';resultPanel.classList.add('active');sceneState.textContent='SHIFT COMPLETE'}
+function rerun(){resetUI();setTimeout(()=>begin(),80)}
+function key(e){if(e.code!=='Space')return;e.preventDefault();if(e.type==='keydown'){if(e.repeat)return;if(state==='ended'){rerun();return}setHeld(true)}else setHeld(false)}
+window.addEventListener('keydown',key,{passive:false});window.addEventListener('keyup',key,{passive:false});
+function pointerDown(e){e.preventDefault();if(state==='ended'){rerun();return}setHeld(true)}function pointerUp(e){e.preventDefault();setHeld(false)}
+holdBtn.addEventListener('pointerdown',pointerDown);holdBtn.addEventListener('pointerup',pointerUp);holdBtn.addEventListener('pointercancel',pointerUp);holdBtn.addEventListener('pointerleave',e=>{if(e.pointerType!=='mouse')pointerUp(e)});
+scene.addEventListener('pointerdown',e=>{if(e.target.closest('button'))return;pointerDown(e)});scene.addEventListener('pointerup',pointerUp);scene.addEventListener('pointercancel',pointerUp);scene.addEventListener('contextmenu',e=>e.preventDefault());
+againBtn.addEventListener('click',rerun);keepBtn.addEventListener('click',resetUI);
+ghostToggle.addEventListener('click',()=>{if(!bestData)return;ghostOn=!ghostOn;ghostState.textContent=ghostOn?'ON':'OFF';ghost.classList.toggle('active',ghostOn);if(state==='idle'||state==='ended')setPositions(progress,ghostProgress)});
+$('#pauseBtn').addEventListener('click',e=>{paused=!paused;e.currentTarget.textContent=paused?'Resume animation':'Pause animation'});
+renderRecords();resetUI();
+})();
+</script>
+</body>
+</html>
