@@ -1,0 +1,6 @@
+Add your licensed/cleared instrumental here with this exact filename:
+
+careless-whisper-instrumental.mp3
+
+The game is already wired to loop it at low background volume and start on the first user gesture if autoplay is blocked.
+The audio recording itself is not included in this package.
